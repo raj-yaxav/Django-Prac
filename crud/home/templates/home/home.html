@@ -1,0 +1,32 @@
+<h1>All Cards</h1>
+<form method="GET">
+  <input type="text" name="q" placeholder="Search...">
+  <button>Search</button>
+</form>
+<h2>Welcome {{ request.user.username }}</h2>
+
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'create' %}">Create Card</a>
+
+<hr>
+
+<h3>Your Cards:</h3>
+
+
+{% for card in cards %}
+  <div>
+    <h2>{{ card.title }}</h2>
+    <p>{{ card.description }}</p>
+    <img src="{{ card.img }}" width="200">
+
+    <br>
+    <a href="{% url 'update' card.id %}">Edit</a>
+    <a href="{% url 'delete' card.id %}">Delete</a>
+  </div>
+  <hr>
+{% endfor %}
+
+
+{% for message in messages%}
+<P >{{message}}</P>
+{% endfor %}

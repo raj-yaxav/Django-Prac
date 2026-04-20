@@ -1,0 +1,11 @@
+<h1>Create Card</h1>
+
+<form method="POST">
+  {% csrf_token %}
+  <input name="title" placeholder="Title"><br><br>
+  <textarea name="description" placeholder="Description"></textarea><br><br>
+  <input name="img" placeholder="Image URL"><br><br>
+  <button>Create</button>
+</form>
+
+<a href="{% url 'home' %}">Back</a>

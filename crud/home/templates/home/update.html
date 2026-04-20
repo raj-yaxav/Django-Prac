@@ -1,0 +1,11 @@
+<h1>Update Card</h1>
+
+<form method="POST">
+  {% csrf_token %}
+  <input name="title" value="{{ card.title }}"><br><br>
+  <textarea name="description">{{ card.description }}</textarea><br><br>
+  <input name="img" value="{{ card.img }}"><br><br>
+  <button>Update</button>
+</form>
+
+<a href="{% url 'home' %}">Back</a>
